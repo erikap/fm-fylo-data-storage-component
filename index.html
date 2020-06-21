@@ -42,13 +42,35 @@
    .bg-mobile {
        background-image: url('./images/bg-mobile.svg')
    }
+   .balloon-position {
+       top: 100%;
+       left: 50%;
+       transform: translate(-50%,-50%);
+   }
    @media (min-width: 640px) {
        .bg-mobile {
            background-image: none;
            background-color:  hsl(229, 57%, 11%);
        }
-   }
 
+       .balloon-position {
+           top: 0;
+           left: auto;
+           right: 0;
+           transform: translate(0, -80%);
+       }
+
+       .balloon-position::after {
+           content: '';
+           width: 2rem;
+           height: 2.5rem;
+           background: white;
+           position: absolute;
+           top: 80%;
+           right: 0;
+           clip-path: polygon(0 0, 100% 0, 100% 100%);
+       }
+   }
   </style>
 </head>
 <body class="font-sans">
@@ -79,7 +101,7 @@
         <div class="text-pale-blue font-normal text-sm tracking-wider text-center mb-4 sm:text-left">
           You’ve used <span class="font-bold">815 GB</span> of your storage
         </div>
-        <div class="absolute left-0 bottom-0 -mb-10 bg-white text-indigo-900 px-6 py-1 rounded-lg tracking-wider uppercase flex items-center sm:hidden">
+        <div class="absolute balloon-position bg-white text-indigo-900 px-6 py-1 rounded-lg tracking-wider uppercase flex items-center sm:mr-8">
           <div class="font-bold text-5xl text-very-dark-blue">185</div>
           <div class="font-bold text-xs text-gray-blue ml-2">GB Left</div>
         </div>
