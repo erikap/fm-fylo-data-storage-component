@@ -38,45 +38,61 @@
    .text-gray-blue {
        color: hsl(229, 7%, 55%)
    }
+
+   .bg-mobile {
+       background-image: url('./images/bg-mobile.svg')
+   }
+   @media (min-width: 640px) {
+       .bg-mobile {
+           background-image: none;
+           background-color:  hsl(229, 57%, 11%);
+       }
+   }
+
   </style>
 </head>
 <body class="font-sans">
-  <div class="bg-cover h-screen w-full p-6 flex flex-wrap items-center content-center" style="background-image: url('./images/bg-mobile.svg')">
-    <div class="mb-4 flex-none w-full">
-      <div class="bg-dark-blue px-8 pt-10 pb-8 rounded-tl-lg rounded-tr-full">
-        <img src="./images/logo.svg" alt="Fylo logo">
-      </div>
-      <div class="bg-dark-blue px-8 pb-10 rounded-b-lg">
-        <div class="flex flex-row">
-          <div class="bg-very-dark-blue w-12 h-12 rounded-lg text-center">
-            <div class="w-full h-full bg-no-repeat bg-center" style="background-image: url('./images/icon-document.svg')"></div>
-          </div>
-          <div class="bg-very-dark-blue ml-3 w-12 h-12 rounded-lg">
-            <div class="w-full h-full bg-no-repeat bg-center" style="background-image: url('./images/icon-folder.svg')"></div>
-          </div>
-          <div class="bg-very-dark-blue ml-3 w-12 h-12 rounded-lg">
-            <div class="w-full h-full bg-no-repeat bg-center" style="background-image: url('./images/icon-upload.svg')"></div>
+  <div class="hidden sm:block fixed bottom-0 left-0 w-full bg-cover" style="height: 50%; background-image: url('./images/bg-desktop.svg')">
+
+  </div>
+  <div class="bg-mobile bg-cover h-screen w-full p-6 z-10">
+    <div class="relative mx-auto w-full max-w-sm sm:max-w-4xl h-full flex flex-wrap items-end content-center justify-center">
+      <div class="mb-4 w-64 flex-grow flex-shrink-0 sm:mb-0 sm:max-w-xs">
+        <div class="bg-dark-blue px-8 pt-10 pb-8 rounded-tl-lg rounded-tr-full">
+          <img src="./images/logo.svg" alt="Fylo logo">
+        </div>
+        <div class="bg-dark-blue px-8 pb-10 rounded-b-lg">
+          <div class="flex flex-row">
+            <div class="bg-very-dark-blue w-12 h-12 rounded-lg text-center">
+              <div class="w-full h-full bg-no-repeat bg-center" style="background-image: url('./images/icon-document.svg')"></div>
+            </div>
+            <div class="bg-very-dark-blue ml-3 w-12 h-12 rounded-lg">
+              <div class="w-full h-full bg-no-repeat bg-center" style="background-image: url('./images/icon-folder.svg')"></div>
+            </div>
+            <div class="bg-very-dark-blue ml-3 w-12 h-12 rounded-lg">
+              <div class="w-full h-full bg-no-repeat bg-center" style="background-image: url('./images/icon-upload.svg')"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="relative bg-dark-blue p-8 pb-20 flex-none w-full rounded-lg">
-      <div class="text-pale-blue font-normal text-sm tracking-wider text-center mb-4">
-        You’ve used <span class="font-bold">815 GB</span> of your storage
-      </div>
-      <div class="absolute left-0 bottom-0 -mb-10 bg-white text-indigo-900 px-6 py-1 rounded-lg tracking-wider uppercase flex items-center">
-        <div class="font-bold text-5xl text-very-dark-blue">185</div>
-        <div class="font-bold text-xs text-gray-blue ml-2">GB Left</div>
-      </div>
-      <div>
-        <div class="bg-very-dark-blue-loading-bar border-very-dark-blue-loading-bar border h-4 mb-2 rounded-full">
-          <div class="bg-loading-bar w-3/4 h-full rounded-full flex items-center justify-end">
-            <div class="bg-white h-3 w-3 rounded-full"></div>
-          </div>
+      <div class="relative bg-dark-blue p-8 pb-20 w-64 flex-grow flex-shrink-0 rounded-lg sm:ml-4 sm:pb-8">
+        <div class="text-pale-blue font-normal text-sm tracking-wider text-center mb-4 sm:text-left">
+          You’ve used <span class="font-bold">815 GB</span> of your storage
         </div>
-        <div class="text-pale-blue font-bold text-xs tracking-wide flex items-start justify-between">
-          <div>0 GB</div>
-          <div>1000 GB</div>
+        <div class="absolute left-0 bottom-0 -mb-10 bg-white text-indigo-900 px-6 py-1 rounded-lg tracking-wider uppercase flex items-center sm:hidden">
+          <div class="font-bold text-5xl text-very-dark-blue">185</div>
+          <div class="font-bold text-xs text-gray-blue ml-2">GB Left</div>
+        </div>
+        <div>
+          <div class="bg-very-dark-blue-loading-bar border-very-dark-blue-loading-bar border h-4 mb-2 rounded-full">
+            <div class="bg-loading-bar w-3/4 h-full rounded-full flex items-center justify-end">
+              <div class="bg-white h-3 w-3 rounded-full"></div>
+            </div>
+          </div>
+          <div class="text-pale-blue font-bold text-xs tracking-wide flex items-start justify-between">
+            <div>0 GB</div>
+            <div>1000 GB</div>
+          </div>
         </div>
       </div>
     </div>
