@@ -9,33 +9,77 @@
   <title>Frontend Mentor | Fylo data storage component</title>
 
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+   .font-sans {
+       font-family: "Raleway", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+   }
+   .bg-loading-bar {
+       background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%))
+   }
+   .bg-very-dark-blue {
+       background-color:  hsl(229, 57%, 11%)
+   }
+   .bg-very-dark-blue-loading-bar {
+       background-color:  hsl(229, 57%, 11%, 0.4)
+   }
+   .border-very-dark-blue-loading-bar {
+       border-color:  hsl(229, 57%, 11%, 0.4)
+   }
+   .bg-dark-blue {
+       background-color: hsl(228, 56%, 26%)
+   }
+   .text-very-dark-blue {
+       color:  hsl(229, 57%, 11%)
+   }
+   .text-pale-blue {
+       color: hsl(243, 100%, 93%)
+   }
+   .text-gray-blue {
+       color: hsl(229, 7%, 55%)
+   }
   </style>
 </head>
-<body>
-
-  <div>
-    <div>Logo</div>
-    <div>Icons</div>
-  </div>
-  <div>
-    <div>You’ve used 815 GB of your storage</div>
-    <div>
-      185 GB Left
+<body class="font-sans">
+  <div class="bg-cover h-screen w-full p-6 flex flex-wrap items-center content-center" style="background-image: url('./images/bg-mobile.svg')">
+    <div class="mb-4 flex-none w-full">
+      <div class="bg-dark-blue px-8 pt-10 pb-8 rounded-tl-lg rounded-tr-full">
+        <img src="./images/logo.svg" alt="Fylo logo">
+      </div>
+      <div class="bg-dark-blue px-8 pb-10 rounded-b-lg">
+        <div class="flex flex-row">
+          <div class="bg-very-dark-blue w-12 h-12 rounded-lg text-center">
+            <div class="w-full h-full bg-no-repeat bg-center" style="background-image: url('./images/icon-document.svg')"></div>
+          </div>
+          <div class="bg-very-dark-blue ml-3 w-12 h-12 rounded-lg">
+            <div class="w-full h-full bg-no-repeat bg-center" style="background-image: url('./images/icon-folder.svg')"></div>
+          </div>
+          <div class="bg-very-dark-blue ml-3 w-12 h-12 rounded-lg">
+            <div class="w-full h-full bg-no-repeat bg-center" style="background-image: url('./images/icon-upload.svg')"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
-      Loading bar
-      0 GB
-      1000 GB
+    <div class="relative bg-dark-blue p-8 pb-20 flex-none w-full rounded-lg">
+      <div class="text-pale-blue font-normal text-sm tracking-wider text-center mb-4">
+        You’ve used <span class="font-bold">815 GB</span> of your storage
+      </div>
+      <div class="absolute left-0 bottom-0 -mb-10 bg-white text-indigo-900 px-6 py-1 rounded-lg tracking-wider uppercase flex items-center">
+        <div class="font-bold text-5xl text-very-dark-blue">185</div>
+        <div class="font-bold text-xs text-gray-blue ml-2">GB Left</div>
+      </div>
+      <div>
+        <div class="bg-very-dark-blue-loading-bar border-very-dark-blue-loading-bar border h-4 mb-2 rounded-full">
+          <div class="bg-loading-bar w-3/4 h-full rounded-full flex items-center justify-end">
+            <div class="bg-white h-3 w-3 rounded-full"></div>
+          </div>
+        </div>
+        <div class="text-pale-blue font-bold text-xs tracking-wide flex items-start justify-between">
+          <div>0 GB</div>
+          <div>1000 GB</div>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://github.com/erikap">erikap</a>.
   </div>
 </body>
 </html>
